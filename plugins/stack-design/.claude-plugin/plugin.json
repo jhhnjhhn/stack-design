@@ -1,0 +1,13 @@
+{
+  "name": "stack-design",
+  "version": "0.1.0",
+  "description": "Choose, compare, review, and evolve application technology stacks from real constraints.",
+  "author": {
+    "name": "naoyouge",
+    "url": "https://github.com/jhhnjhhn"
+  },
+  "homepage": "https://github.com/jhhnjhhn/stack-design",
+  "repository": "https://github.com/jhhnjhhn/stack-design",
+  "license": "MIT",
+  "keywords": ["technology-stack", "architecture", "decision", "adr", "overengineering", "migration"]
+}

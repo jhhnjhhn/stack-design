@@ -3,6 +3,35 @@ __pycache__/
 *.py[codz]
 *$py.class
 
+# Private planning documents
+/docs/stack-design-requirements.md
+
+# Local agent and editor state (marketplace metadata remains tracked)
+/.codex/
+/.claude/settings.local.json
+/.idea/
+/.vscode/
+
+# Local secrets; commit redacted examples explicitly when needed
+.env
+.env.*
+!.env.example
+!.env.*.example
+
+# Operating-system metadata
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Temporary and generated local output
+/.tmp/
+/tmp/
+/temp/
+/reports/
+*.tmp
+*.bak
+*.swp
+
 # C extensions
 *.so
 
@@ -148,7 +177,6 @@ activemq-data/
 *.sage.py
 
 # Environments
-.env
 .envrc
 .venv
 env/

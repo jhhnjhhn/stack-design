@@ -1,0 +1,8 @@
+interface:
+  display_name: "Stack Design"
+  short_description: "Choose the simplest stack for real constraints"
+  brand_color: "#2563EB"
+  default_prompt: "Use $stack-design to choose and explain the simplest sufficient technology stack."
+
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,15 @@
+{
+  "name": "stack-design",
+  "metadata": {
+    "description": "Constraint-first technology decisions for AI coding agents."
+  },
+  "owner": {
+    "name": "naoyouge"
+  },
+  "plugins": [
+    {
+      "name": "stack-design",
+      "source": "./plugins/stack-design"
+    }
+  ]
+}

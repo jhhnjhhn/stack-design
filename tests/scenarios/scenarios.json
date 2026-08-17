@@ -1,0 +1,769 @@
+[
+  {
+    "scenario": "small_internal_tool",
+    "must_recommend": [
+      "react",
+      "vite",
+      "postgresql",
+      "docker-compose"
+    ],
+    "must_not_recommend": [
+      "kafka",
+      "kubernetes",
+      "elasticsearch"
+    ],
+    "prompt": "Choose a stack for a 4-person team building a private CRUD dashboard for 30 employees. No SEO, one Linux server, React experience.",
+    "acceptable": [],
+    "required_sections": [
+      "context",
+      "hard_constraints",
+      "architecture",
+      "selected",
+      "rejected",
+      "risks",
+      "assumptions",
+      "scaling_triggers"
+    ]
+  },
+  {
+    "scenario": "internal_python_media",
+    "must_recommend": [
+      "fastapi",
+      "postgresql",
+      "docker-compose"
+    ],
+    "must_not_recommend": [
+      "kafka",
+      "kubernetes"
+    ],
+    "prompt": "Choose a stack for an internal image pipeline requiring Python and OpenCV, five users, one Linux server, asynchronous jobs.",
+    "acceptable": [],
+    "required_sections": [
+      "context",
+      "hard_constraints",
+      "architecture",
+      "selected",
+      "rejected",
+      "risks",
+      "assumptions",
+      "scaling_triggers"
+    ]
+  },
+  {
+    "scenario": "seo_saas",
+    "must_recommend": [
+      "nextjs",
+      "postgresql"
+    ],
+    "must_not_recommend": [
+      "kubernetes",
+      "kafka"
+    ],
+    "prompt": "Choose a stack for a public SaaS with SEO landing pages, authenticated dashboard, subscriptions, and an initial 10k users.",
+    "acceptable": [],
+    "required_sections": [
+      "context",
+      "hard_constraints",
+      "architecture",
+      "selected",
+      "rejected",
+      "risks",
+      "assumptions",
+      "scaling_triggers"
+    ]
+  },
+  {
+    "scenario": "vue_seo_site",
+    "must_recommend": [
+      "nuxt",
+      "postgresql"
+    ],
+    "must_not_recommend": [
+      "kafka"
+    ],
+    "prompt": "Choose the simplest sufficient stack for this scenario: vue seo site. Explain trade-offs and rejected alternatives.",
+    "acceptable": [],
+    "required_sections": [
+      "context",
+      "hard_constraints",
+      "architecture",
+      "selected",
+      "rejected",
+      "risks",
+      "assumptions",
+      "scaling_triggers"
+    ]
+  },
+  {
+    "scenario": "content_site",
+    "must_recommend": [
+      "astro"
+    ],
+    "must_not_recommend": [
+      "redis",
+      "kafka",
+      "kubernetes"
+    ],
+    "prompt": "Choose the simplest sufficient stack for this scenario: content site. Explain trade-offs and rejected alternatives.",
+    "acceptable": [],
+    "required_sections": [
+      "context",
+      "hard_constraints",
+      "architecture",
+      "selected",
+      "rejected",
+      "risks",
+      "assumptions",
+      "scaling_triggers"
+    ]
+  },
+  {
+    "scenario": "python_ai_api",
+    "must_recommend": [
+      "fastapi",
+      "postgresql"
+    ],
+    "must_not_recommend": [
+      "nestjs",
+      "kafka"
+    ],
+    "prompt": "Choose the simplest sufficient stack for this scenario: python ai api. Explain trade-offs and rejected alternatives.",
+    "acceptable": [],
+    "required_sections": [
+      "context",
+      "hard_constraints",
+      "architecture",
+      "selected",
+      "rejected",
+      "risks",
+      "assumptions",
+      "scaling_triggers"
+    ]
+  },
+  {
+    "scenario": "python_admin_product",
+    "must_recommend": [
+      "django",
+      "postgresql"
+    ],
+    "must_not_recommend": [
+      "kubernetes"
+    ],
+    "prompt": "Choose the simplest sufficient stack for this scenario: python admin product. Explain trade-offs and rejected alternatives.",
+    "acceptable": [],
+    "required_sections": [
+      "context",
+      "hard_constraints",
+      "architecture",
+      "selected",
+      "rejected",
+      "risks",
+      "assumptions",
+      "scaling_triggers"
+    ]
+  },
+  {
+    "scenario": "existing_flask_small_change",
+    "must_recommend": [
+      "flask"
+    ],
+    "must_not_recommend": [
+      "nestjs",
+      "spring-boot"
+    ],
+    "prompt": "Choose the simplest sufficient stack for this scenario: existing flask small change. Explain trade-offs and rejected alternatives.",
+    "acceptable": [],
+    "required_sections": [
+      "context",
+      "hard_constraints",
+      "architecture",
+      "selected",
+      "rejected",
+      "risks",
+      "assumptions",
+      "scaling_triggers"
+    ]
+  },
+  {
+    "scenario": "typescript_modular_api",
+    "must_recommend": [
+      "nestjs",
+      "postgresql"
+    ],
+    "must_not_recommend": [
+      "kafka"
+    ],
+    "prompt": "Choose the simplest sufficient stack for this scenario: typescript modular api. Explain trade-offs and rejected alternatives.",
+    "acceptable": [],
+    "required_sections": [
+      "context",
+      "hard_constraints",
+      "architecture",
+      "selected",
+      "rejected",
+      "risks",
+      "assumptions",
+      "scaling_triggers"
+    ]
+  },
+  {
+    "scenario": "node_lightweight_api",
+    "must_recommend": [
+      "fastify",
+      "postgresql"
+    ],
+    "must_not_recommend": [
+      "spring-boot"
+    ],
+    "prompt": "Choose the simplest sufficient stack for this scenario: node lightweight api. Explain trade-offs and rejected alternatives.",
+    "acceptable": [],
+    "required_sections": [
+      "context",
+      "hard_constraints",
+      "architecture",
+      "selected",
+      "rejected",
+      "risks",
+      "assumptions",
+      "scaling_triggers"
+    ]
+  },
+  {
+    "scenario": "enterprise_java",
+    "must_recommend": [
+      "spring-boot",
+      "postgresql"
+    ],
+    "must_not_recommend": [
+      "fastapi"
+    ],
+    "prompt": "Choose the simplest sufficient stack for this scenario: enterprise java. Explain trade-offs and rejected alternatives.",
+    "acceptable": [],
+    "required_sections": [
+      "context",
+      "hard_constraints",
+      "architecture",
+      "selected",
+      "rejected",
+      "risks",
+      "assumptions",
+      "scaling_triggers"
+    ]
+  },
+  {
+    "scenario": "enterprise_dotnet",
+    "must_recommend": [
+      "aspnet-core",
+      "postgresql"
+    ],
+    "must_not_recommend": [
+      "fastapi"
+    ],
+    "prompt": "Choose the simplest sufficient stack for this scenario: enterprise dotnet. Explain trade-offs and rejected alternatives.",
+    "acceptable": [],
+    "required_sections": [
+      "context",
+      "hard_constraints",
+      "architecture",
+      "selected",
+      "rejected",
+      "risks",
+      "assumptions",
+      "scaling_triggers"
+    ]
+  },
+  {
+    "scenario": "existing_mysql",
+    "must_recommend": [
+      "mysql"
+    ],
+    "must_not_recommend": [
+      "mongodb"
+    ],
+    "prompt": "Choose the simplest sufficient stack for this scenario: existing mysql. Explain trade-offs and rejected alternatives.",
+    "acceptable": [],
+    "required_sections": [
+      "context",
+      "hard_constraints",
+      "architecture",
+      "selected",
+      "rejected",
+      "risks",
+      "assumptions",
+      "scaling_triggers"
+    ]
+  },
+  {
+    "scenario": "desktop_local_app",
+    "must_recommend": [
+      "sqlite"
+    ],
+    "must_not_recommend": [
+      "kubernetes",
+      "redis"
+    ],
+    "prompt": "Choose the simplest sufficient stack for this scenario: desktop local app. Explain trade-offs and rejected alternatives.",
+    "acceptable": [],
+    "required_sections": [
+      "context",
+      "hard_constraints",
+      "architecture",
+      "selected",
+      "rejected",
+      "risks",
+      "assumptions",
+      "scaling_triggers"
+    ]
+  },
+  {
+    "scenario": "document_catalog",
+    "must_recommend": [
+      "mongodb"
+    ],
+    "must_not_recommend": [
+      "kafka"
+    ],
+    "prompt": "Choose the simplest sufficient stack for this scenario: document catalog. Explain trade-offs and rejected alternatives.",
+    "acceptable": [],
+    "required_sections": [
+      "context",
+      "hard_constraints",
+      "architecture",
+      "selected",
+      "rejected",
+      "risks",
+      "assumptions",
+      "scaling_triggers"
+    ]
+  },
+  {
+    "scenario": "analytics_events",
+    "must_recommend": [
+      "clickhouse",
+      "postgresql"
+    ],
+    "must_not_recommend": [],
+    "prompt": "Choose the simplest sufficient stack for this scenario: analytics events. Explain trade-offs and rejected alternatives.",
+    "acceptable": [],
+    "required_sections": [
+      "context",
+      "hard_constraints",
+      "architecture",
+      "selected",
+      "rejected",
+      "risks",
+      "assumptions",
+      "scaling_triggers"
+    ]
+  },
+  {
+    "scenario": "small_rag",
+    "must_recommend": [
+      "postgresql",
+      "pgvector"
+    ],
+    "must_not_recommend": [
+      "qdrant",
+      "kafka",
+      "kubernetes"
+    ],
+    "prompt": "Choose a stack for a Python team building document upload and Q&A over 100k documents with relational metadata.",
+    "acceptable": [],
+    "required_sections": [
+      "context",
+      "hard_constraints",
+      "architecture",
+      "selected",
+      "rejected",
+      "risks",
+      "assumptions",
+      "scaling_triggers"
+    ]
+  },
+  {
+    "scenario": "large_vector_core",
+    "must_recommend": [
+      "qdrant",
+      "postgresql"
+    ],
+    "must_not_recommend": [],
+    "prompt": "Choose the simplest sufficient stack for this scenario: large vector core. Explain trade-offs and rejected alternatives.",
+    "acceptable": [],
+    "required_sections": [
+      "context",
+      "hard_constraints",
+      "architecture",
+      "selected",
+      "rejected",
+      "risks",
+      "assumptions",
+      "scaling_triggers"
+    ]
+  },
+  {
+    "scenario": "modest_background_jobs",
+    "must_recommend": [
+      "database-jobs",
+      "postgresql"
+    ],
+    "must_not_recommend": [
+      "kafka"
+    ],
+    "prompt": "Choose the simplest sufficient stack for this scenario: modest background jobs. Explain trade-offs and rejected alternatives.",
+    "acceptable": [],
+    "required_sections": [
+      "context",
+      "hard_constraints",
+      "architecture",
+      "selected",
+      "rejected",
+      "risks",
+      "assumptions",
+      "scaling_triggers"
+    ]
+  },
+  {
+    "scenario": "python_worker",
+    "must_recommend": [
+      "dramatiq",
+      "redis"
+    ],
+    "must_not_recommend": [
+      "kafka"
+    ],
+    "prompt": "Choose the simplest sufficient stack for this scenario: python worker. Explain trade-offs and rejected alternatives.",
+    "acceptable": [],
+    "required_sections": [
+      "context",
+      "hard_constraints",
+      "architecture",
+      "selected",
+      "rejected",
+      "risks",
+      "assumptions",
+      "scaling_triggers"
+    ]
+  },
+  {
+    "scenario": "python_advanced_workers",
+    "must_recommend": [
+      "celery",
+      "redis"
+    ],
+    "must_not_recommend": [
+      "kafka"
+    ],
+    "prompt": "Choose the simplest sufficient stack for this scenario: python advanced workers. Explain trade-offs and rejected alternatives.",
+    "acceptable": [],
+    "required_sections": [
+      "context",
+      "hard_constraints",
+      "architecture",
+      "selected",
+      "rejected",
+      "risks",
+      "assumptions",
+      "scaling_triggers"
+    ]
+  },
+  {
+    "scenario": "node_jobs",
+    "must_recommend": [
+      "bullmq",
+      "redis"
+    ],
+    "must_not_recommend": [
+      "kafka"
+    ],
+    "prompt": "Choose the simplest sufficient stack for this scenario: node jobs. Explain trade-offs and rejected alternatives.",
+    "acceptable": [],
+    "required_sections": [
+      "context",
+      "hard_constraints",
+      "architecture",
+      "selected",
+      "rejected",
+      "risks",
+      "assumptions",
+      "scaling_triggers"
+    ]
+  },
+  {
+    "scenario": "complex_routing",
+    "must_recommend": [
+      "rabbitmq"
+    ],
+    "must_not_recommend": [
+      "kafka"
+    ],
+    "prompt": "Choose the simplest sufficient stack for this scenario: complex routing. Explain trade-offs and rejected alternatives.",
+    "acceptable": [],
+    "required_sections": [
+      "context",
+      "hard_constraints",
+      "architecture",
+      "selected",
+      "rejected",
+      "risks",
+      "assumptions",
+      "scaling_triggers"
+    ]
+  },
+  {
+    "scenario": "durable_event_stream",
+    "must_recommend": [
+      "kafka"
+    ],
+    "must_not_recommend": [],
+    "prompt": "Choose messaging for sustained high-throughput events requiring replay, multiple consumer groups, and durable ordered partitions.",
+    "acceptable": [],
+    "required_sections": [
+      "context",
+      "hard_constraints",
+      "architecture",
+      "selected",
+      "rejected",
+      "risks",
+      "assumptions",
+      "scaling_triggers"
+    ]
+  },
+  {
+    "scenario": "basic_search",
+    "must_recommend": [
+      "postgres-fts",
+      "postgresql"
+    ],
+    "must_not_recommend": [
+      "elasticsearch"
+    ],
+    "prompt": "Choose the simplest sufficient stack for this scenario: basic search. Explain trade-offs and rejected alternatives.",
+    "acceptable": [],
+    "required_sections": [
+      "context",
+      "hard_constraints",
+      "architecture",
+      "selected",
+      "rejected",
+      "risks",
+      "assumptions",
+      "scaling_triggers"
+    ]
+  },
+  {
+    "scenario": "product_search",
+    "must_recommend": [
+      "meilisearch",
+      "postgresql"
+    ],
+    "must_not_recommend": [
+      "elasticsearch"
+    ],
+    "prompt": "Choose the simplest sufficient stack for this scenario: product search. Explain trade-offs and rejected alternatives.",
+    "acceptable": [],
+    "required_sections": [
+      "context",
+      "hard_constraints",
+      "architecture",
+      "selected",
+      "rejected",
+      "risks",
+      "assumptions",
+      "scaling_triggers"
+    ]
+  },
+  {
+    "scenario": "advanced_search",
+    "must_recommend": [
+      "elasticsearch",
+      "postgresql"
+    ],
+    "must_not_recommend": [],
+    "prompt": "Choose the simplest sufficient stack for this scenario: advanced search. Explain trade-offs and rejected alternatives.",
+    "acceptable": [],
+    "required_sections": [
+      "context",
+      "hard_constraints",
+      "architecture",
+      "selected",
+      "rejected",
+      "risks",
+      "assumptions",
+      "scaling_triggers"
+    ]
+  },
+  {
+    "scenario": "single_server",
+    "must_recommend": [
+      "docker-compose"
+    ],
+    "must_not_recommend": [
+      "kubernetes"
+    ],
+    "prompt": "Choose deployment for a small modular monolith and worker running on one Linux server without an HA requirement.",
+    "acceptable": [],
+    "required_sections": [
+      "context",
+      "hard_constraints",
+      "architecture",
+      "selected",
+      "rejected",
+      "risks",
+      "assumptions",
+      "scaling_triggers"
+    ]
+  },
+  {
+    "scenario": "bursty_webhook",
+    "must_recommend": [
+      "serverless",
+      "postgresql"
+    ],
+    "must_not_recommend": [
+      "kubernetes"
+    ],
+    "prompt": "Choose the simplest sufficient stack for this scenario: bursty webhook. Explain trade-offs and rejected alternatives.",
+    "acceptable": [],
+    "required_sections": [
+      "context",
+      "hard_constraints",
+      "architecture",
+      "selected",
+      "rejected",
+      "risks",
+      "assumptions",
+      "scaling_triggers"
+    ]
+  },
+  {
+    "scenario": "mature_platform_many_services",
+    "must_recommend": [
+      "kubernetes"
+    ],
+    "must_not_recommend": [],
+    "prompt": "Choose deployment for 40 independently deployed services across multiple nodes with HA, autoscaling, and an experienced platform team.",
+    "acceptable": [],
+    "required_sections": [
+      "context",
+      "hard_constraints",
+      "architecture",
+      "selected",
+      "rejected",
+      "risks",
+      "assumptions",
+      "scaling_triggers"
+    ]
+  },
+  {
+    "scenario": "enterprise_sso",
+    "must_recommend": ["oidc", "postgresql"],
+    "must_not_recommend": [],
+    "prompt": "Choose authentication for a B2B application that must integrate with customer identity providers through enterprise SSO and retain an audit trail.",
+    "acceptable": ["managed-auth"],
+    "required_sections": ["context", "hard_constraints", "architecture", "selected", "rejected", "risks", "assumptions", "scaling_triggers"]
+  },
+  {
+    "scenario": "first_party_browser_auth",
+    "must_recommend": ["session-auth", "rest"],
+    "must_not_recommend": ["graphql"],
+    "prompt": "Choose authentication and API style for one first-party browser application with a simple resource API and no external clients.",
+    "acceptable": [],
+    "required_sections": ["context", "hard_constraints", "architecture", "selected", "rejected", "risks", "assumptions", "scaling_triggers"]
+  },
+  {
+    "scenario": "low_frequency_status",
+    "must_recommend": ["polling", "rest"],
+    "must_not_recommend": ["websocket"],
+    "prompt": "Choose an update mechanism for a dashboard that refreshes job status every 30 seconds for fewer than 100 concurrent users.",
+    "acceptable": ["sse"],
+    "required_sections": ["context", "hard_constraints", "architecture", "selected", "rejected", "risks", "assumptions", "scaling_triggers"]
+  },
+  {
+    "scenario": "server_notification_stream",
+    "must_recommend": ["sse"],
+    "must_not_recommend": ["websocket"],
+    "prompt": "Choose realtime delivery for server-to-browser notifications and streamed AI tokens; the browser never sends messages on the same channel.",
+    "acceptable": [],
+    "required_sections": ["context", "hard_constraints", "architecture", "selected", "rejected", "risks", "assumptions", "scaling_triggers"]
+  },
+  {
+    "scenario": "collaborative_editor",
+    "must_recommend": ["websocket"],
+    "must_not_recommend": ["polling"],
+    "prompt": "Choose realtime transport for a collaborative editor requiring bidirectional sub-second updates, presence, and reconnect handling.",
+    "acceptable": [],
+    "required_sections": ["context", "hard_constraints", "architecture", "selected", "rejected", "risks", "assumptions", "scaling_triggers"]
+  },
+  {
+    "scenario": "public_resource_api",
+    "must_recommend": ["rest"],
+    "must_not_recommend": ["graphql"],
+    "prompt": "Choose an API style for a small public resource API with many languages as clients and stable simple response shapes.",
+    "acceptable": [],
+    "required_sections": ["context", "hard_constraints", "architecture", "selected", "rejected", "risks", "assumptions", "scaling_triggers"]
+  },
+  {
+    "scenario": "multi_client_query_shapes",
+    "must_recommend": ["graphql"],
+    "must_not_recommend": [],
+    "prompt": "Choose an API style for web, mobile, and partner clients with materially different nested data shapes and an experienced schema-governance team.",
+    "acceptable": ["rest"],
+    "required_sections": ["context", "hard_constraints", "architecture", "selected", "rejected", "risks", "assumptions", "scaling_triggers"]
+  },
+  {
+    "scenario": "internal_service_rpc",
+    "must_recommend": ["grpc"],
+    "must_not_recommend": [],
+    "prompt": "Choose an API style for controlled service-to-service calls that require generated contracts, streaming, and efficient binary transport.",
+    "acceptable": ["rest"],
+    "required_sections": ["context", "hard_constraints", "architecture", "selected", "rejected", "risks", "assumptions", "scaling_triggers"]
+  },
+  {
+    "scenario": "private_object_storage",
+    "must_recommend": ["minio"],
+    "must_not_recommend": ["s3"],
+    "prompt": "Choose object storage for an air-gapped private deployment that requires an S3-compatible API and has an operations team.",
+    "acceptable": [],
+    "required_sections": ["context", "hard_constraints", "architecture", "selected", "rejected", "risks", "assumptions", "scaling_triggers"]
+  },
+  {
+    "scenario": "aws_object_storage",
+    "must_recommend": ["s3"],
+    "must_not_recommend": ["minio"],
+    "prompt": "Choose durable object storage for an application already standardized on AWS where the team wants no storage-cluster operations.",
+    "acceptable": [],
+    "required_sections": ["context", "hard_constraints", "architecture", "selected", "rejected", "risks", "assumptions", "scaling_triggers"]
+  },
+  {
+    "scenario": "distributed_observability",
+    "must_recommend": ["opentelemetry", "prometheus"],
+    "must_not_recommend": [],
+    "prompt": "Choose observability components for multiple production services with SLOs, cross-service latency debugging, and an existing operations team.",
+    "acceptable": ["grafana"],
+    "required_sections": ["context", "hard_constraints", "architecture", "selected", "rejected", "risks", "assumptions", "scaling_triggers"]
+  },
+  {
+    "scenario": "github_repository_ci",
+    "must_recommend": ["github-actions"],
+    "must_not_recommend": ["jenkins"],
+    "prompt": "Choose CI for a new GitHub-hosted repository that needs build, test, and deploy automation without an existing CI platform team.",
+    "acceptable": [],
+    "required_sections": ["context", "hard_constraints", "architecture", "selected", "rejected", "risks", "assumptions", "scaling_triggers"]
+  },
+  {
+    "scenario": "database_fast_enough",
+    "must_recommend": ["no-shared-cache"],
+    "must_not_recommend": ["redis"],
+    "prompt": "Choose a cache strategy for a new application whose database already meets the latency target and has no session, lock, rate-limit, or queue requirement.",
+    "acceptable": ["local-memory-cache"],
+    "required_sections": ["context", "hard_constraints", "architecture", "selected", "rejected", "risks", "assumptions", "scaling_triggers"]
+  },
+  {
+    "scenario": "small_team_architecture",
+    "must_recommend": ["modular-monolith"],
+    "must_not_recommend": ["microservices"],
+    "prompt": "Choose an architecture for four developers owning one product with one release cadence and no independent scaling or isolation requirement.",
+    "acceptable": [],
+    "required_sections": ["context", "hard_constraints", "architecture", "selected", "rejected", "risks", "assumptions", "scaling_triggers"]
+  }
+]

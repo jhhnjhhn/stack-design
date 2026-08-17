@@ -1,0 +1,20 @@
+{
+  "name": "stack-design",
+  "interface": {
+    "displayName": "Stack Design"
+  },
+  "plugins": [
+    {
+      "name": "stack-design",
+      "source": {
+        "source": "local",
+        "path": "./plugins/stack-design"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}
