@@ -1,0 +1,31 @@
+name: Decision improvement
+description: Propose a technology profile, scenario, rule, or workflow improvement.
+title: "[Proposal]: "
+labels: [enhancement]
+body:
+  - type: textarea
+    id: decision_problem
+    attributes:
+      label: Decision problem
+      description: What real technology decision would this improve?
+    validations:
+      required: true
+  - type: textarea
+    id: scenarios
+    attributes:
+      label: Affected scenarios
+      description: Give concrete project constraints where the current guidance is missing or wrong.
+    validations:
+      required: true
+  - type: textarea
+    id: tradeoffs
+    attributes:
+      label: Trade-offs
+      description: What complexity, operational cost, or lock-in would this change introduce?
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Primary sources
+      description: Link official documentation or specifications that support the proposal.

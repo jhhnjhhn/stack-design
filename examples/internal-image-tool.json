@@ -1,0 +1,91 @@
+{
+  "schema_version": "1.0",
+  "mode": "full",
+  "context": {
+    "summary": "Greenfield internal image asset tool for five users; React is preferred, Python is required for OpenCV and AI image workflows, SEO is not required, and deployment is one Linux server.",
+    "stage": "mvp",
+    "greenfield": true,
+    "team_size": 5,
+    "deployment": {"single_server": true, "private": true, "multi_node_ha": false},
+    "requirements": {"seo": false, "queue_broker": true, "event_replay": false, "multiple_consumer_groups": false, "advanced_search_beyond_sql": false},
+    "existing_stack": {"frontend_preference": "React", "required_language": "Python"}
+  },
+  "hard_constraints": ["Python image-processing ecosystem", "Single Linux server", "No SEO or SSR requirement"],
+  "architecture": {"choice": "modular-monolith", "reason": "One small team owns one product and no capability requires an independent deployment lifecycle."},
+  "selected": [
+    {
+      "layer": "frontend", "technology": "React", "profile": "react",
+      "reason": "It preserves the team's existing preference for an interactive private UI.",
+      "evidence": ["The application is an authenticated internal tool.", "The team already prefers React."],
+      "confidence": {"level": "high", "factors": {"requirements": 2, "constraints": 2, "profile_quality": 2, "candidate_gap": 2, "existing_stack": 2}, "basis": ["UI mode, SEO boundary, and team preference are explicit."]}
+    },
+    {
+      "layer": "frontend build", "technology": "Vite", "profile": "vite",
+      "reason": "A client SPA does not need an SSR server or framework caching model.",
+      "evidence": ["SEO and SSR are explicitly out of scope."],
+      "confidence": {"level": "high", "factors": {"requirements": 2, "constraints": 2, "profile_quality": 2, "candidate_gap": 2, "existing_stack": 1}, "basis": ["The rendering boundary clearly favors a simple SPA build."]}
+    },
+    {
+      "layer": "backend", "technology": "FastAPI", "profile": "fastapi",
+      "reason": "It keeps the API in the Python runtime already required by media processing.",
+      "evidence": ["OpenCV and AI image workflows require Python.", "The product needs an HTTP API."],
+      "confidence": {"level": "high", "factors": {"requirements": 2, "constraints": 2, "profile_quality": 2, "candidate_gap": 2, "existing_stack": 2}, "basis": ["The required domain ecosystem creates a large candidate gap."]}
+    },
+    {
+      "layer": "database", "technology": "PostgreSQL", "profile": "postgresql",
+      "reason": "Relational asset, project, user, and job metadata fit one transactional source of truth.",
+      "evidence": ["The core metadata is relational.", "No specialized database workload is present."],
+      "confidence": {"level": "high", "factors": {"requirements": 2, "constraints": 2, "profile_quality": 2, "candidate_gap": 2, "existing_stack": null}, "basis": ["A single relational database covers current access patterns."]}
+    },
+    {
+      "layer": "object storage", "technology": "MinIO", "profile": "minio",
+      "reason": "Private deployment benefits from an S3-compatible binary-storage boundary.",
+      "evidence": ["Generated and uploaded images should not be database blobs.", "Deployment is private."],
+      "confidence": {"level": "medium", "factors": {"requirements": 1, "constraints": 2, "profile_quality": 2, "candidate_gap": 1, "existing_stack": null}, "basis": ["A managed S3 service would be simpler if public cloud is allowed."]}
+    },
+    {
+      "layer": "background jobs", "technology": "Dramatiq with Redis broker", "profile": "dramatiq",
+      "reason": "Image generation and transformation must execute outside request latency; Redis is justified only as the broker.",
+      "evidence": ["Long-running media work is asynchronous.", "Retryable worker execution is required."],
+      "confidence": {"level": "medium", "factors": {"requirements": 1, "constraints": 2, "profile_quality": 2, "candidate_gap": 1, "existing_stack": null}, "basis": ["Expected job volume is unknown, so database-backed jobs remain credible."]}
+    },
+    {
+      "layer": "queue broker", "technology": "Redis", "profile": "redis",
+      "reason": "It is broker infrastructure for the selected worker, not a speculative application cache.",
+      "evidence": ["The recommendation explicitly requires a queue broker."],
+      "confidence": {"level": "medium", "factors": {"requirements": 1, "constraints": 2, "profile_quality": 2, "candidate_gap": 1, "existing_stack": null}, "basis": ["Database jobs may remove the broker at the initial job volume."]}
+    },
+    {
+      "layer": "deployment", "technology": "Docker Compose", "profile": "docker-compose",
+      "reason": "It operates the web, API, worker, database, broker, and storage processes on one server without a cluster control plane.",
+      "evidence": ["Deployment is one Linux server.", "Multi-node HA is not required."],
+      "confidence": {"level": "high", "factors": {"requirements": 2, "constraints": 2, "profile_quality": 2, "candidate_gap": 2, "existing_stack": null}, "basis": ["The deployment boundary is explicit."]}
+    }
+  ],
+  "alternatives": [
+    {"choice": "Database-backed jobs", "reason": "Prefer this if initial retries and throughput remain modest."},
+    {"choice": "Managed S3", "reason": "Prefer this if public cloud is allowed and reduced operations outweigh provider dependence."}
+  ],
+  "rejected": [
+    {"technology": "Next.js", "reason": "No SEO or SSR requirement."},
+    {"technology": "Kafka", "reason": "No replayable stream or multiple consumer-group requirement."},
+    {"technology": "Kubernetes", "reason": "Single-server deployment has no orchestration requirement."},
+    {"technology": "Elasticsearch", "reason": "No search requirement beyond PostgreSQL."},
+    {"technology": "Microservices", "reason": "One team and one deployment lifecycle favor a modular monolith."}
+  ],
+  "overengineering": [
+    {"technology": "Redis", "status": "justified", "reason": "Used as a queue broker, not an application cache."},
+    {"technology": "Kafka", "status": "rejected", "reason": "Streaming triggers are absent."},
+    {"technology": "Kubernetes", "status": "rejected", "reason": "Multi-node HA and platform operations are absent."}
+  ],
+  "risks": ["Self-hosted MinIO and Redis require backup and monitoring.", "Job volume is not yet measured."],
+  "assumptions": ["Initial job volume is modest.", "Brief maintenance windows are acceptable."],
+  "scaling_triggers": [
+    {"condition": "queue latency breaches the product target after worker tuning", "evaluate": "a managed queue or horizontally scaled workers"},
+    {"condition": "multi-node high availability becomes a current requirement", "evaluate": "an orchestration platform"}
+  ],
+  "evolution_path": [
+    {"phase": "MVP", "changes": ["Use the selected modular monolith and one server."]},
+    {"phase": "Measured growth", "changes": ["Change the queue or deployment only when its trigger is observed."]}
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Stack Design Recommendation",
+  "type": "object",
+  "required": ["schema_version", "mode", "context", "hard_constraints", "architecture", "selected", "alternatives", "rejected", "overengineering", "risks", "assumptions", "scaling_triggers", "evolution_path"],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "mode": {"enum": ["full", "quick", "compare", "existing", "migrate", "adr"]},
+    "context": {
+      "type": "object",
+      "required": ["summary", "stage", "greenfield", "team_size", "deployment", "requirements"],
+      "properties": {
+        "summary": {"type": "string", "minLength": 1},
+        "stage": {"enum": ["prototype", "mvp", "production", "scale"]},
+        "greenfield": {"type": "boolean"},
+        "team_size": {"type": ["integer", "null"], "minimum": 1},
+        "deployment": {"type": "object"},
+        "requirements": {"type": "object"},
+        "existing_stack": {"type": "object"}
+      }
+    },
+    "hard_constraints": {"type": "array", "items": {"type": "string"}},
+    "architecture": {"type": "object", "required": ["choice", "reason"]},
+    "selected": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["layer", "technology", "profile", "reason", "evidence", "confidence"],
+        "properties": {
+          "layer": {"type": "string"},
+          "technology": {"type": "string"},
+          "profile": {"type": "string"},
+          "reason": {"type": "string"},
+          "evidence": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+          "confidence": {
+            "type": "object",
+            "required": ["level", "factors", "basis"],
+            "properties": {
+              "level": {"enum": ["low", "medium", "high"]},
+              "factors": {
+                "type": "object",
+                "required": ["requirements", "constraints", "profile_quality", "candidate_gap"],
+                "additionalProperties": {"type": ["integer", "null"], "minimum": 0, "maximum": 2}
+              },
+              "basis": {"type": "array", "minItems": 1, "items": {"type": "string"}}
+            }
+          }
+        }
+      }
+    },
+    "alternatives": {"type": "array"},
+    "rejected": {"type": "array", "items": {"type": "object", "required": ["technology", "reason"]}},
+    "overengineering": {"type": "array", "items": {"type": "object", "required": ["technology", "status", "reason"]}},
+    "risks": {"type": "array", "items": {"type": "string"}},
+    "assumptions": {"type": "array", "items": {"type": "string"}},
+    "scaling_triggers": {"type": "array", "items": {"type": "object", "required": ["condition", "evaluate"]}},
+    "evolution_path": {"type": "array", "minItems": 1}
+  }
+}

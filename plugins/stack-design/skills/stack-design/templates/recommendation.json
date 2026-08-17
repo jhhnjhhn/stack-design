@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0",
+  "mode": "full",
+  "context": {
+    "summary": "Replace with a concise project summary.",
+    "stage": "mvp",
+    "greenfield": true,
+    "team_size": null,
+    "deployment": {"single_server": false, "private": false, "multi_node_ha": false},
+    "requirements": {"seo": false, "realtime": false, "event_replay": false, "multiple_consumer_groups": false},
+    "existing_stack": {}
+  },
+  "hard_constraints": [],
+  "architecture": {"choice": "modular-monolith", "reason": "Replace with context-specific evidence."},
+  "selected": [
+    {
+      "layer": "database",
+      "technology": "PostgreSQL",
+      "profile": "postgresql",
+      "reason": "Replace with context-specific evidence.",
+      "evidence": ["Relational transactions are required."],
+      "confidence": {
+        "level": "medium",
+        "factors": {"requirements": 1, "constraints": 1, "profile_quality": 2, "candidate_gap": 1, "existing_stack": null},
+        "basis": ["The data model is known, but expected scale is still an assumption."]
+      }
+    }
+  ],
+  "alternatives": [],
+  "rejected": [],
+  "overengineering": [],
+  "risks": [],
+  "assumptions": [],
+  "scaling_triggers": [],
+  "evolution_path": [{"phase": "current", "changes": ["Start with the selected stack."]}]
+}

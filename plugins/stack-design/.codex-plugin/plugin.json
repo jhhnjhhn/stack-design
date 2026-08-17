@@ -1,0 +1,29 @@
+{
+  "name": "stack-design",
+  "version": "0.1.0",
+  "description": "Choose, compare, review, and evolve application technology stacks from real constraints.",
+  "author": {
+    "name": "naoyouge",
+    "url": "https://github.com/jhhnjhhn"
+  },
+  "homepage": "https://github.com/jhhnjhhn/stack-design",
+  "repository": "https://github.com/jhhnjhhn/stack-design",
+  "license": "MIT",
+  "keywords": ["technology-stack", "architecture", "decision", "adr", "overengineering", "migration"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Stack Design",
+    "shortDescription": "Choose the simplest stack that satisfies real constraints.",
+    "longDescription": "Analyze requirements, constraints, team context, deployment reality, and existing code before choosing a technology stack. Explain selected and rejected options, confidence, risks, migration cost, and measurable evolution triggers.",
+    "developerName": "naoyouge",
+    "category": "Productivity",
+    "capabilities": ["Read", "Write"],
+    "websiteURL": "https://github.com/jhhnjhhn/stack-design",
+    "defaultPrompt": [
+      "Choose the simplest sufficient stack for this project.",
+      "Review this repository before adding a new technology.",
+      "Compare these stack options and explain the trade-offs."
+    ],
+    "brandColor": "#2563EB"
+  }
+}
